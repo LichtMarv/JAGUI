@@ -7,9 +7,11 @@ function jag:init()
     end
     self.counter = 0
     while true do
+        os.pullEvent("timer")
         jag:clear()
         jag:draw()
         jag:postUpdate()
+        os.startTimer(0)
     end
 end
 
