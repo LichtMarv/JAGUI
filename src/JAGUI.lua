@@ -5,6 +5,10 @@ function init()
     end
 end
 
-function drawText(text)
+jag = {}
+
+function jag.drawText(text)
     screen.write(text)
 end
+
+return jag
