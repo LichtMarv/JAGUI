@@ -5,7 +5,8 @@ function jag:init()
     if self.screen == nil then
         self.screen = term
     end
-    self.counter = 0
+    self.frameCounter = 0
+    os.startTimer(0.1)
     while true do
         os.pullEvent("timer")
         jag:clear()
@@ -21,7 +22,7 @@ function jag:clear()
 end
 
 function jag:postUpdate()
-    self.counter = self.counter + 1
+    self.frameCounter = self.frameCounter + 1
 end
 
 function jag:drawText(text)
