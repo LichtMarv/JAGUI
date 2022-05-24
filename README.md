@@ -1,2 +1,2 @@
 # JAGUI
-Just Another GUI
+Just Another GUI for [https://tweaked.cc](CC:Tweaked)
