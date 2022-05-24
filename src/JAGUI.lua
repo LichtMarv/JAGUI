@@ -1,14 +1,14 @@
 jag = {}
 
-function jag.init()
-    screen = peripheral.find("monitor")
-    if screen == nil then
-        screen = term
+function jag:init()
+    self.screen = peripheral.find("monitor")
+    if self.screen == nil then
+        self.screen = term
     end
 end
 
-function jag.drawText(text)
-    screen.write(text)
+function jag:drawText(text)
+    self.screen.write(text)
 end
 
 return jag
