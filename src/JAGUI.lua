@@ -11,7 +11,7 @@ function jag:init()
         jag:clear()
         jag:draw()
         jag:postUpdate()
-        os.startTimer(0)
+        os.startTimer(0.3)
     end
 end
 
