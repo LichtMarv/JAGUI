@@ -39,8 +39,8 @@ function jag:color(col)
 end
 
 function jag:drawRect(t, l, b, r)
-    local w = r - l
-    local h = b - t
+    local w = self.width - (r + l)
+    local h = self.height - (b + t)
     for i = t, t + h, 1 do
         self.screen.setCursorPos(i, l)
         for j = l, l + w, 1 do
