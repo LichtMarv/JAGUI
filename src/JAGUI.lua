@@ -23,12 +23,14 @@ end
 
 function jag:postUpdate()
     self.frameCounter = self.frameCounter + 1
+    self.screen.setBackgroundColor(colors.black)
 end
 
-function jag:background(color)
+function jag:background(color, clear)
     self.screen.setBackgroundColor(color)
-    self:clear()
-    self.screen.setBackgroundColor(colors.black)
+    if clear then
+        self.screen.clear()
+    end
 end
 
 function jag:drawText(text, color)
