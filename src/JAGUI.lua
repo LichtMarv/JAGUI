@@ -49,12 +49,11 @@ function jag:drawRect(t, l, b, r)
     local w = self.width - (x1 + x2)
     local h = self.height - (y1 + y2)
     for i = y1, y1 + h + 1, 1 do
-        self.screen.setCursorPos(l, i)
+        self.screen.setCursorPos(x1, i)
         for j = x1, x1 + w + 1, 1 do
             self.screen.write(" ")
         end
     end
-    self.screen.setCursorPos(t, l)
     self:background(c, false)
 end
 
