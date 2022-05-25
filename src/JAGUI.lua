@@ -25,7 +25,14 @@ function jag:postUpdate()
     self.frameCounter = self.frameCounter + 1
 end
 
-function jag:drawText(text)
+function jag:background(color)
+    self.screen.setBackgroundColor(color)
+    self:clear()
+    self.screen.setBackgroundColor(colors.black)
+end
+
+function jag:drawText(text, color)
+    self.screen.setTextColor(color)
     self.screen.write(text)
 end
 
