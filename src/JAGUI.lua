@@ -36,12 +36,12 @@ end
 
 function jag:color(col)
     self.screen.setTextColor(col)
-    self.color = col
+    self.currentColor = col
 end
 
 function jag:drawRect(t, l, b, r)
     local c = self.screen.getBackgroundColor()
-    self:background(self.color, false)
+    self:background(self.currentColor, false)
     local w = self.width - (r + l)
     local h = self.height - (b + t)
     for i = t, t + h, 1 do
