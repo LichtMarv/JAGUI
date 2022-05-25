@@ -36,18 +36,22 @@ end
 
 function jag:color(col)
     self.screen.setTextColor(col)
+    self.color = col
 end
 
 function jag:drawRect(t, l, b, r)
+    local c = self.screen.getBackgroundColor()
+    self:background(self.color, false)
     local w = self.width - (r + l)
     local h = self.height - (b + t)
     for i = t, t + h, 1 do
-        self.screen.setCursorPos(i, l)
+        self.screen.setCursorPos(l, i)
         for j = l, l + w, 1 do
             self.screen.write(" ")
         end
     end
     self.screen.setCursorPos(t, l)
+    self:background(c, false)
 end
 
 function jag:drawText(text, color)
