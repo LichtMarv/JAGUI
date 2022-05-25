@@ -42,10 +42,10 @@ end
 function jag:drawRect(t, l, b, r)
     local c = self.screen.getBackgroundColor()
     self:background(self.currentColor, false)
-    local x1 = l / 100 * self.width
-    local y1 = t / 100 * self.height
-    local x2 = r / 100 * self.width
-    local y2 = b / 100 * self.height
+    local x1 = math.floor(l / 100 * self.width)
+    local y1 = math.floor(t / 100 * self.height)
+    local x2 = math.ciel(r / 100 * self.width)
+    local y2 = math.ciel(b / 100 * self.height)
     local w = self.width - (x1 + x2)
     local h = self.height - (y1 + y2)
     for i = y1, y1 + h + 1, 1 do
