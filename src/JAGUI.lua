@@ -42,11 +42,15 @@ end
 function jag:drawRect(t, l, b, r)
     local c = self.screen.getBackgroundColor()
     self:background(self.currentColor, false)
-    local w = self.width - (r + l)
-    local h = self.height - (b + t)
-    for i = t, t + h, 1 do
+    local x1 = l / 100 * self.width
+    local y1 = t / 100 * self.height
+    local x2 = r / 100 * self.width
+    local y2 = b / 100 * self.height
+    local w = self.width - (x1 + x2)
+    local h = self.height - (y1 + y2)
+    for i = y1, y1 + h + 1, 1 do
         self.screen.setCursorPos(l, i)
-        for j = l, l + w, 1 do
+        for j = x1, x1 + w + 1, 1 do
             self.screen.write(" ")
         end
     end
