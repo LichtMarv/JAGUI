@@ -5,6 +5,7 @@ function jag:init()
     if self.screen == nil then
         self.screen = term
     end
+    self.width, self.height = self.screen.getSize()
     self.frameCounter = 0
     os.startTimer(0.1)
     while true do
@@ -31,6 +32,22 @@ function jag:background(color, clear)
     if clear then
         self.screen.clear()
     end
+end
+
+function jag:color(col)
+    self.screen.setTextColor(col)
+end
+
+function jag:drawRect(t, l, b, r)
+    local w = r - l
+    local h = b - t
+    for i = t, t + h, 1 do
+        self.screen.setCursorPos(i, l)
+        for j = l, l + w, 1 do
+            self.screen.write(" ")
+        end
+    end
+    self.screen.setCursorPos(t, l)
 end
 
 function jag:drawText(text, color)
